@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="https://t4is.uv.mx/saludos" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://t4is.uv.mx/saludos" targetNamespace="https://t4is.uv.mx/saludos">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="https://t4is.uv.mx/saludos">
+   <xs:element name="SaludarRequest">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="nombre" type="xs:string"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="SaludarResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="respuesta" type="xs:string"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="BuscarSaludosRequest"/>
+   <xs:element name="BuscarSaludosResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="saludos">
+               <xs:complexType>
+                  <xs:sequence>
+                     <xs:element name="id" type="xs:int"/>
+                     <xs:element name="nombre" type="xs:string"/>
+                  </xs:sequence>
+               </xs:complexType>
+            </xs:element>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ModificarSaludoRequest">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="nombre" type="xs:string"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ModificarSaludoResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="respuesta" type="xs:boolean"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="BorrarSaludoRequest">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="BorrarSaludoResponse">
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element name="respuesta" type="xs:boolean"/>
+         </xs:sequence>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="BuscarSaludosRequest">
+    <wsdl:part element="tns:BuscarSaludosRequest" name="BuscarSaludosRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ModificarSaludoRequest">
+    <wsdl:part element="tns:ModificarSaludoRequest" name="ModificarSaludoRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BuscarSaludosResponse">
+    <wsdl:part element="tns:BuscarSaludosResponse" name="BuscarSaludosResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ModificarSaludoResponse">
+    <wsdl:part element="tns:ModificarSaludoResponse" name="ModificarSaludoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BorrarSaludoResponse">
+    <wsdl:part element="tns:BorrarSaludoResponse" name="BorrarSaludoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SaludarRequest">
+    <wsdl:part element="tns:SaludarRequest" name="SaludarRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SaludarResponse">
+    <wsdl:part element="tns:SaludarResponse" name="SaludarResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="BorrarSaludoRequest">
+    <wsdl:part element="tns:BorrarSaludoRequest" name="BorrarSaludoRequest">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="saludosPort">
+    <wsdl:operation name="BuscarSaludos">
+      <wsdl:input message="tns:BuscarSaludosRequest" name="BuscarSaludosRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:BuscarSaludosResponse" name="BuscarSaludosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarSaludo">
+      <wsdl:input message="tns:ModificarSaludoRequest" name="ModificarSaludoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:ModificarSaludoResponse" name="ModificarSaludoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarSaludo">
+      <wsdl:input message="tns:BorrarSaludoRequest" name="BorrarSaludoRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:BorrarSaludoResponse" name="BorrarSaludoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saludar">
+      <wsdl:input message="tns:SaludarRequest" name="SaludarRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:SaludarResponse" name="SaludarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="saludosPortSoap11" type="tns:saludosPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="BuscarSaludos">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="BuscarSaludosRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="BuscarSaludosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarSaludo">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="ModificarSaludoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ModificarSaludoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrarSaludo">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="BorrarSaludoRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="BorrarSaludoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saludar">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="SaludarRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SaludarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="saludosPortService">
+    <wsdl:port binding="tns:saludosPortSoap11" name="saludosPortSoap11">
+      <soap:address location="http://ip172-18-0-68-ch06818sf2q000dg1240-8081.direct.labs.play-with-docker.com:80/ws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

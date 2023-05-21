@@ -1,0 +1,5 @@
+dotnet new web -o soap test
+cd soap test
+dotnet add package SoapCore
+mkdir models Services
+crear archivo Mensajes.cs y Operaciones.cs

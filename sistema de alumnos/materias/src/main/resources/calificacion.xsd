@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://t4is.uv.mx/calificacion" xmlns:tns="https://t4is.uv.mx/calificacion" elementFormDefault="qualified">
+ 
+  <xs:element name="calificacionRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idAlumno" type="xs:string" />
+          <xs:element name="bfc" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+   </xs:element>
+  
+  <xs:element name="CalificacionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="calificacionBuscarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="calificacionBuscarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="calificacionModificarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+        <xs:element name="idAlumno" type="xs:string" />
+          <xs:element name="bfc" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="calificacionModificarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="calificacionEliminarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="calificacionEliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="calificacionHistorialRequest">
+  </xs:element>
+  
+  <xs:element name="calificacionHistorialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

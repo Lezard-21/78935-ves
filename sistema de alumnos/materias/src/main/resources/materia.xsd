@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://t4is.uv.mx/materia" xmlns:tns="https://t4is.uv.mx/materia" elementFormDefault="qualified">
+
+  
+  <xs:element name="materiaRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="materiaNombre" type="xs:string"/>
+        <xs:element name="materiasDescripcion" type="xs:string"/>
+        <xs:element name="maestro" type="xs:string"/>
+     
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="materiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="materiaBuscarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="materiaBuscarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="materiaModificarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+           <xs:element name="materiaNombre" type="xs:string"/>
+        <xs:element name="materiasDescripcion" type="xs:string"/>
+        <xs:element name="maestro" type="xs:string"/>
+  
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="materiaModificarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="materiaEliminarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="materiaEliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="materiaHistorialRequest">
+  </xs:element>
+  <xs:element name="materiaHistorialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

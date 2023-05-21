@@ -1,0 +1,144 @@
+version: '3.3'
+services:
+  alumnos:
+    image: amazoncorretto:19
+    volumes:
+    - ./app:/app
+    ports:
+    - 8080:8081
+    environment:
+     MYSQL_HOST: mysql
+    command:
+    - java
+    - -jar
+    - /app/alumno.jar
+    depends_on:
+    - mysql
+    links:
+    - mysql
+    restart: always
+    
+  calificaciones:
+    image: amazoncorretto:19
+    volumes:
+    - ./app:/app
+    ports:
+    - 8081:8081
+    environment:
+     MYSQL_HOST: mysql
+    command:
+    - java
+    - -jar
+    - /app/calificacione.jar
+    depends_on:
+    - mysql
+    links:
+    - mysql
+    restart: always
+    
+  materias:
+    image: amazoncorretto:19
+    volumes:
+    - ./app:/app
+    ports:
+    - 8083:8081
+    environment:
+     MYSQL_HOST: mysql
+    command:
+    - java
+    - -jar
+    - /app/materias.jar
+    depends_on:
+    - mysql
+    links:
+    - mysql
+    restart: always
+
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    environment:
+      - MYSQL_USER=yo
+      - MYSQL_PASSWORD=123
+      - MYSQL_DATABASE=saludos
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - "./conf.d:/etc/mysql/conf.d:ro"
+      
+
+
+
+
+
+
+para dos bases de datos
+version: '3.3'
+services:
+  alumnos:
+    image: amazoncorretto:19
+    volumes:
+    - ./app:/app
+    ports:
+    - 8080:8081
+    environment:
+     MYSQL_HOST: mysql
+    command:
+    - java
+    - -jar
+    - /app/alumno.jar
+    depends_on:
+    - mysql
+    links:
+    - mysql
+    restart: always
+   
+  materias:
+    image: amazoncorretto:19
+    volumes:
+    - ./app:/app
+    ports:
+    - 8083:8081
+    environment:
+     MYSQL_HOST: mysql2
+    command:
+    - java
+    - -jar
+    - /app/materia.jar
+    depends_on:
+    - mysql2
+    links:
+    - mysql2
+    restart: always
+
+
+  mysql2:
+    image: mysql
+    ports:
+      - "3308:3306"
+    expose:
+      - "3306"
+    environment:
+      - MYSQL_USER=yo
+      - MYSQL_PASSWORD=123
+      - MYSQL_DATABASE=saludos
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - "./conf.d:/etc/mysql/conf.d:ro"
+
+
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    environment:
+      - MYSQL_USER=yo
+      - MYSQL_PASSWORD=123
+      - MYSQL_DATABASE=saludos
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - "./conf.d:/etc/mysql/conf.d:ro"

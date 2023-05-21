@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\david\\OneDrive\\Documentos\\6_semestre\\Tecnologias para la creacion de software\\SOAP\\practica01\\SOAP_test.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\david\\OneDrive\\Documentos\\6_semestre\\Tecnologias para la creacion de software\\SOAP\\practica01\\SOAP_test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\david\\OneDrive\\Documentos\\6_semestre\\Tecnologias para la creacion de software\\SOAP\\practica01\\SOAP_test.csproj",
+        "projectName": "SOAP_test",
+        "projectPath": "C:\\Users\\david\\OneDrive\\Documentos\\6_semestre\\Tecnologias para la creacion de software\\SOAP\\practica01\\SOAP_test.csproj",
+        "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\david\\OneDrive\\Documentos\\6_semestre\\Tecnologias para la creacion de software\\SOAP\\practica01\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "SoapCore": {
+              "target": "Package",
+              "version": "[1.1.0.36, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

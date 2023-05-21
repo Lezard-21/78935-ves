@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://t4is.uv.mx/alumno" xmlns:tns="https://t4is.uv.mx/alumno" elementFormDefault="qualified">
+
+  <xs:element name="alumnoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="apellido" type="xs:string"/>
+                <xs:element name="nacimiento" type="xs:string"/>
+                <xs:element name="genero" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="telefono" type="xs:string"/>
+                <xs:element name="licenciatura" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+     <xs:element name="alumnoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="alumnoBuscarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="alumnoBuscarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="alumnoModificarRequest">
+    <xs:complexType>
+      <xs:sequence>
+                <xs:element name="posicion" type="xs:int" />
+                <xs:element name="nombre" type="xs:string"/>
+                <xs:element name="apellido" type="xs:string"/>
+                <xs:element name="nacimiento" type="xs:string"/>
+                <xs:element name="genero" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="telefono" type="xs:string"/>
+                <xs:element name="licenciatura" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="alumnoModificarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="alumnoEliminarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="alumnoEliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="alumnoHistorialRequest">
+  </xs:element>
+  
+  <xs:element name="alumnoHistorialResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+</xs:schema>

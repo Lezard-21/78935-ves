@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="https://t4is.uv.mx/saludos" xmlns:tns="https://t4is.uv.mx/saludos" elementFormDefault="qualified">
+  <xs:element name="SaludarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaludarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+        <xs:element name="nombre" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ModificarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="posicion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="respuesta" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
